@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./main.css">
     <title>Agenda de Contatos</title>
 </head>
@@ -25,11 +26,13 @@
             <input type="text" id="phone" name="phone" required>
             <button type="submit">Cadastrar</button>
         </form>
+        <input type="text" id="search" class="search" placeholder="Buscar contato...">
         <table id="contactsTable">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>

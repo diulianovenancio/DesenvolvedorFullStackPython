@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .project-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .project-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .project-item:last-child {
+            border-bottom: none;
+        }
+        .project-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .project-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .project-description {
+            color: #666;
+        }
+        .project-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .project-actions button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .view-button {
+            background-color: #007BFF;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .project-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Projetos</h1>
+        <ul class="project-list" id="projectList">
+            <!-- Projetos serão adicionados aqui -->
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = [
+                { title: 'Projeto 1', description: 'Site de Game', url: 'https://ebac.diuliano.com.br/Projeto01-Pratica' },
+                { title: 'Projeto 2', description: 'Agenda de Contatos', url: 'https://ebac.diuliano.com.br/Projeto02-Pratica' },
+                { title: 'Módulo 10', description: 'Lista de Tarefas', url: 'https://ebac.diuliano.com.br/Modulo10-ListaDeTarefa' }
+            ];
+
+            const projectList = document.getElementById('projectList');
+
+            projects.forEach(project => {
+                const projectItem = document.createElement('li');
+                projectItem.className = 'project-item';
+
+                const projectInfo = document.createElement('div');
+                projectInfo.className = 'project-info';
+                projectInfo.innerHTML = `<div class="project-title">${project.title}</div><div class="project-description">${project.description}</div>`;
+
+                const projectActions = document.createElement('div');
+                projectActions.className = 'project-actions';
+                projectActions.innerHTML = `<button class="view-button" onclick="window.open('${project.url}', '_blank')">Ver</button>`;
+
+                projectItem.appendChild(projectInfo);
+                projectItem.appendChild(projectActions);
+
+                projectList.appendChild(projectItem);
+            });
+        });
+    </script>
+</body>
+</html>

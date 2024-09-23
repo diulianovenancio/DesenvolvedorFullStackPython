@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/agenda.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./images/list.png" alt="Agenda">
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <form id="taskForm">
+            <label for="task">Tarefa:</label>
+            <input type="text" id="task" name="task" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="taskList"></ul>
+        <button class="clear-button" id="clearTasks">Deletar Todas as Tarefas</button>
+        <div class="legend">
+            <p><strong>Legenda:</strong></p>
+            <p>- Clique em uma tarefa para marcá-la como concluída.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
